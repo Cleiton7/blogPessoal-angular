@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedComponent implements OnInit {
 
+  imagemPerfil:string = "assets/images/perfil.jpg";
+
   constructor() { }
 
   ngOnInit(): void {
