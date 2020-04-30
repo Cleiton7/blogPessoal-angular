@@ -15,6 +15,9 @@ export class FeedComponent implements OnInit {
 
   imagemPerfil:string = "assets/images/perfil.jpg";
 
+  key = 'date'
+  reverse = true
+
   // Traz a lista de postagens da classe Postagem da nossa model em forma de array
   listaPostagens: Postagem []
 
