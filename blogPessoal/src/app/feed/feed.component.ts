@@ -15,8 +15,11 @@ export class FeedComponent implements OnInit {
 
   imagemPerfil:string = "assets/images/perfil.jpg";
 
-  // Chama a classe Postagem da nossa model
+  // Traz a lista de postagens da classe Postagem da nossa model em forma de array
   listaPostagens: Postagem []
+
+  // Traz somente uma postagem
+  postagem: Postagem = new Postagem
 
   constructor(private postagemService: PostagemService) { }
 
@@ -31,4 +34,11 @@ export class FeedComponent implements OnInit {
     })
   }
 
+  // Método responsável por fazer uma postagem
+  publicar(){
+    this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
+      this.postagem = resp
+      location.assign('/feed')
+    })
+  }
 }
